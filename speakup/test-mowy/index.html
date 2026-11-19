@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<title>Test mowy po angielsku</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <p class="notice">Dźwięk analizuje Google w przeglądarce Chrome; strona nic nie zapisuje.</p>
+  <h1>Test: czy telefon rozumie Twój angielski?</h1>
+  <p class="howto">Naciśnij <b>Mów</b>, przeczytaj zdanie na głos i poczekaj chwilę. Na końcu naciśnij <b>Pokaż wynik</b>.</p>
+</header>
+
+<div id="unsupported" class="unsupported" hidden>
+  <p><b>Otwórz w Chrome.</b></p>
+  <p>Ta przeglądarka nie ma rozpoznawania mowy. Skopiuj adres strony i otwórz go w Google Chrome na telefonie z Androidem.</p>
+</div>
+
+<main id="list" aria-live="polite"></main>
+
+<div class="bar">
+  <span id="progress">0 / 15</span>
+  <button id="showResult" class="big secondary" type="button">Pokaż wynik</button>
+</div>
+
+<section id="result" class="result" hidden>
+  <h2>Wynik</h2>
+  <p id="summary" class="summary"></p>
+  <ol id="resultList"></ol>
+  <button id="copy" class="big" type="button">Kopiuj wynik</button>
+  <p id="copyStatus" class="status" aria-live="polite"></p>
+  <textarea id="copyFallback" readonly hidden aria-label="Wynik do skopiowania"></textarea>
+  <button id="back" class="big secondary" type="button">Wróć do zdań</button>
+</section>
+
+<script src="score.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
